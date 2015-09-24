@@ -1,0 +1,13 @@
+<p>
+  <strong>Title:</strong>
+  <%= @people.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @people.text %>
+</p>
+
+
+<%= link_to 'Edit', edit_person_path(@people) %> |
+<%= link_to 'Back', people_path %>
