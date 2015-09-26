@@ -1,7 +1,6 @@
 
 
-
-<%= form_for :people ,url: people_path(@people) do |f| %>
+<%= form_for @people do |f| %>
 
     <% if @people.errors.any? %>
         <div id="error_explanation">

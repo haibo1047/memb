@@ -2,6 +2,11 @@
 
 <%= link_to 'New people', new_person_path %>
 
+<%= nav_bar do %>
+    <%= menu_item "Home", root_path %>
+    <%= menu_item "People", people_path %>
+<% end %>
+
 <table>
   <tr>
     <th>Title</th>

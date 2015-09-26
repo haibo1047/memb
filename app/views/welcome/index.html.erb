@@ -4,3 +4,9 @@
 <h1>Hello, Rails!</h1>
 <%= link_to 'All people', controller: 'people' %>
 
+<%= nav_bar brand: "Members" do %>
+    <%= menu_item "People", people_path %>
+    <%= menu_item "Home", root_path %>
+    <%= menu_item "About Us", root_path %>
+<% end %>
+

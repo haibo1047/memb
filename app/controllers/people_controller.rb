@@ -45,6 +45,10 @@ class PeopleController < ApplicationController
 
   private
   def people_params
-      params.require(:people).permit(:title, :text)
+      o = params.require(:people).permit(:title, :text)
+
+      print(o)
+
+      return o
   end
 end
