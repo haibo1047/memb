@@ -18,6 +18,7 @@ class PeopleController < ApplicationController
 
   def destroy
     @people = Person.find(params[:id])
+    render plain: params[:@people].inspect
     @people.destroy
 
     render 'index'
@@ -25,6 +26,7 @@ class PeopleController < ApplicationController
 
   def create
     @people = Person.new(people_params)
+    render plain: params[:@people].inspect
 
     if @people.save
       redirect_to @people
@@ -35,7 +37,7 @@ class PeopleController < ApplicationController
 
   def update
     @people = Person.find(params[:id])
-
+    print(plain: params[:@people].inspect)
     if @people.update(people_params)
       redirect_to @people
     else
@@ -45,10 +47,7 @@ class PeopleController < ApplicationController
 
   private
   def people_params
-      o = params.require(:people).permit(:title, :text)
-
-      print(o)
-
-      return o
+      params.require(:people).permit(:title, :text)
   end
+
 end
