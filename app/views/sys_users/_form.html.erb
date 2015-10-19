@@ -1,0 +1,39 @@
+<%= form_for @sysUser do |f| %>
+
+    <% if @sysUser.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@sysUser.errors.count, "error") %> prohibited
+            this sys_user from being saved:
+          </h2>
+          <ul>
+            <% @sysUser.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+      <%= f.label :userName %><br>
+      <%= f.text_field :userName %>
+    </p>
+
+    <p>
+      <%= f.label :password %><br>
+      <%= f.text_field :password %>
+    </p>
+
+    <p>
+      <%= f.label :mobile %><br>
+      <%= f.text_field :mobile %>
+    </p>
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>

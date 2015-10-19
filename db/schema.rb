@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150928142424) do
+ActiveRecord::Schema.define(version: 20151015153945) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20150928142424) do
     t.text     "text",       limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "sys_users", force: :cascade do |t|
+    t.string   "userName",   limit: 255
+    t.string   "password",   limit: 255
+    t.string   "mobile",     limit: 255
+    t.string   "email",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_foreign_key "comments", "articles"
