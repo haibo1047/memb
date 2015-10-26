@@ -40,11 +40,11 @@ class SysUsersController < ApplicationController
     @sysUser = SysUser.find(params[:id])
     @sysUser.destroy
 
-    redirect_to sys_user_path
+    redirect_to sys_users_path
   end
 
   private
   def sysUser_params
-    params.require(:sysUser).permit(:userName, :password, :mobile, :email)
+    params.require(:sys_user).permit(:userName, :password, :mobile, :email)
   end
 end
